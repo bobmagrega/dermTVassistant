@@ -44,7 +44,7 @@ namespace ExampleSQLapp2
 
             if (string.IsNullOrEmpty(query))
             {
-                
+
                 searchResult.Text = "Ничего не найдено";
                 return;
             }
@@ -75,20 +75,20 @@ namespace ExampleSQLapp2
             if (e.KeyValue == (char)Keys.Enter)
             {
                 searchButton_Click(searchButton, null);
-            }    
+            }
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            addDoc3.Text = "к.м.н., доц. ";
+            addDoc3.Text = "к.м.н., доц. " + addDoc2.Text;
             addDoc3.Focus();
             if (!string.IsNullOrEmpty(addDoc3.Text)) addDoc3.Select(14, 14);
         }
 
         private void addDMNbtn_Click(object sender, EventArgs e)
         {
-            addDoc3.Text = "д.м.н., проф. ";
+            addDoc3.Text = "д.м.н., проф. " + addDoc2.Text;
             addDoc3.Focus();
             if (!string.IsNullOrEmpty(addDoc3.Text)) addDoc3.Select(14, 14);
 
@@ -97,15 +97,15 @@ namespace ExampleSQLapp2
         private void addDocbtn_Click(object sender, EventArgs e)
         {
             List<string> list = new List<string>();
-           
-                
-                string add1 = addDoc1.Text;
+
+
+            string add1 = addDoc1.Text;
             if (string.IsNullOrEmpty(add1))
             {
                 addDoc1.Text = "Не были введены данные.";
 
             }
-           
+
             else if (addDoc1.Text == "Не были введены данные.")
             {
                 add1 = null;
@@ -176,7 +176,7 @@ namespace ExampleSQLapp2
                 searchResult.AppendText("Ничего не было добавлено.");
             }
 
-           else if (string.IsNullOrEmpty(add1) && string.IsNullOrEmpty(add2) && add3 == "д.м.н., проф. ")
+            else if (string.IsNullOrEmpty(add1) && string.IsNullOrEmpty(add2) && add3 == "д.м.н., проф. ")
             {
                 addDoc3.Text = "Не были введены данные.";
                 searchResult.AppendText("Ничего не было добавлено.");
@@ -200,7 +200,8 @@ namespace ExampleSQLapp2
 
 
 
-            else {
+            else
+            {
                 searchResult.AppendText("Добавлено:");
                 searchResult.AppendText(Environment.NewLine);
                 searchResult.AppendText(add1);
@@ -224,92 +225,25 @@ namespace ExampleSQLapp2
             docResult.Clear();
         }
 
-       
+
         private void button4_Click(object sender, EventArgs e)
         {
             Clipboard.SetText("<br>");
         }
 
-        
-
-        private void LoginForm_Load_1(object sender, EventArgs e)
+        private void renamePastebtn_Click(object sender, EventArgs e)
         {
-            string[] separator = { "\n",};
-            string[] pasta = File.ReadAllText("pasta.txt").Split(separator, StringSplitOptions.None);
-            listBox1.Items.AddRange(pasta);
-            listBox1.Items.Remove("");
-            listBox1.Items.Remove("\r\n");
+            Clipboard.SetText("Чтобы переименовать себя, нажмите на кнопку \"участники\" внизу в программе зум.\nВ верху списка имен будете вы, в скобочках будет написано(я).\nНажмите по себе и выберите \"переименовать\".Введите ваши ФИО.\nУчастники, не указавшие своё имя, будут переведены в зал ожидания без возможности просмотра лекции до установления личности.");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void soundPastebtn_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(listBox1.SelectedItem.ToString());
+            Clipboard.SetText("Для тех, у кого нет звука: В левом нижнем углу программы зум есть кнопка с иконкой микрофончика.\nНажмите по ней и следуйте инструкциям на экране. На компьютерах появится синяя кнопка \"использовать звук компьютера\" - нажмитей по ней, чтобы включить звук.\nНа мобильных устройствах может быть кнопка \"Wi - Fi или отправка данных сотовой сети\", нажмите по ней, чтобы включить звук.");
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void waitPastebtn_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Add(textBox1.Text);
-            listBox1.Items.Remove("");
-            File.AppendAllText("pasta.txt", textBox1.Text + "\n");
-            
-
+            Clipboard.SetText("Пользователи, которые ожидают разрешение на вход от организатора - вам нужно изменить имя в зум, по которому мы сможем узнать вас.\nПока вы не переименуетесь или не напишите в группу вацап ваше ФИО, вас не допустят до лекции.");
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-
-
-
-
-        }
-
-        private void button4_Click_1(object sender, EventArgs e)
-        {
-            string[] string_array = (from object item in listBox1.Items select item.ToString()).ToArray<string>();
-
-            listBox1.Items.Remove("");
-            File.WriteAllLines("pasta.txt", string_array);
-
-            //foreach (string k in string_array)
-            //{
-                
-            //}
-            
-            
-        }
-
-
-
-
-
-
-
-        //private void searchResult_TextChanged(object sender, EventArgs e)
-        //{
-        //    searchResult.Lines = File.ReadAllLines("test.txt");
-        //}
-
-
-
-
-
-        //private void searchBox_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    if (e.KeyValue == (char)Keys.Enter)
-        //    {
-        //        searchButton_Click(searchButton, null);
-        //    }
-        //}
-
-
-
-        // void LoginForm_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    if (e.KeyValue == (char)Keys.Enter)
-        //    {
-        //        searchButton_Click(searchButton, null);
-        //    }
-        //}
     }
 }

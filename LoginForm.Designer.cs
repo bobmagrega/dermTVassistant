@@ -30,6 +30,7 @@ namespace ExampleSQLapp2
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.label1 = new System.Windows.Forms.Label();
             this.docInput = new System.Windows.Forms.TextBox();
             this.KMNDOTS = new System.Windows.Forms.Button();
@@ -52,12 +53,13 @@ namespace ExampleSQLapp2
             this.ClearBtn = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.copy = new System.Windows.Forms.Button();
-            this.add = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.delete = new System.Windows.Forms.Button();
-            this.save = new System.Windows.Forms.Button();
+            this.soundPastebtn = new System.Windows.Forms.Button();
+            this.renamePastebtn = new System.Windows.Forms.Button();
+            this.waitPastebtn = new System.Windows.Forms.Button();
+            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -257,81 +259,70 @@ namespace ExampleSQLapp2
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
-            // listBox1
+            // soundPastebtn
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(599, 95);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(144, 316);
-            this.listBox1.TabIndex = 22;
+            this.soundPastebtn.Location = new System.Drawing.Point(610, 334);
+            this.soundPastebtn.Name = "soundPastebtn";
+            this.soundPastebtn.Size = new System.Drawing.Size(105, 36);
+            this.soundPastebtn.TabIndex = 20;
+            this.soundPastebtn.Text = "Звук";
+            this.soundPastebtn.UseVisualStyleBackColor = true;
+            this.soundPastebtn.Click += new System.EventHandler(this.soundPastebtn_Click);
             // 
-            // copy
+            // renamePastebtn
             // 
-            this.copy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.copy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.copy.Location = new System.Drawing.Point(749, 95);
-            this.copy.Name = "copy";
-            this.copy.Size = new System.Drawing.Size(95, 35);
-            this.copy.TabIndex = 23;
-            this.copy.Text = "Copy";
-            this.copy.UseVisualStyleBackColor = true;
-            this.copy.Click += new System.EventHandler(this.button1_Click);
+            this.renamePastebtn.Location = new System.Drawing.Point(610, 292);
+            this.renamePastebtn.Name = "renamePastebtn";
+            this.renamePastebtn.Size = new System.Drawing.Size(105, 36);
+            this.renamePastebtn.TabIndex = 21;
+            this.renamePastebtn.Text = "Переименование";
+            this.renamePastebtn.UseVisualStyleBackColor = true;
+            this.renamePastebtn.Click += new System.EventHandler(this.renamePastebtn_Click);
             // 
-            // add
+            // waitPastebtn
             // 
-            this.add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.add.Location = new System.Drawing.Point(749, 283);
-            this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(95, 35);
-            this.add.TabIndex = 24;
-            this.add.Text = "Add";
-            this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.button2_Click_1);
+            this.waitPastebtn.Location = new System.Drawing.Point(610, 376);
+            this.waitPastebtn.Name = "waitPastebtn";
+            this.waitPastebtn.Size = new System.Drawing.Size(105, 36);
+            this.waitPastebtn.TabIndex = 22;
+            this.waitPastebtn.Text = "Ожидание входа";
+            this.waitPastebtn.UseVisualStyleBackColor = true;
+            this.waitPastebtn.Click += new System.EventHandler(this.waitPastebtn_Click);
             // 
-            // textBox1
+            // contextMenuStrip3
             // 
-            this.textBox1.Location = new System.Drawing.Point(749, 325);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(130, 86);
-            this.textBox1.TabIndex = 25;
+            this.contextMenuStrip3.Name = "contextMenuStrip3";
+            this.contextMenuStrip3.Size = new System.Drawing.Size(61, 4);
             // 
-            // delete
+            // label7
             // 
-            this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete.Location = new System.Drawing.Point(749, 136);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(95, 35);
-            this.delete.TabIndex = 26;
-            this.delete.Text = "Delete";
-            this.delete.UseVisualStyleBackColor = true;
-            this.delete.Click += new System.EventHandler(this.button3_Click);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(607, 276);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 13);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Копипасты:";
             // 
-            // save
+            // pictureBox1
             // 
-            this.save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.save.Location = new System.Drawing.Point(749, 177);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(95, 35);
-            this.save.TabIndex = 27;
-            this.save.Text = "Save";
-            this.save.UseVisualStyleBackColor = true;
-            this.save.Click += new System.EventHandler(this.button4_Click_1);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(587, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(138, 99);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 433);
-            this.Controls.Add(this.save);
-            this.Controls.Add(this.delete);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.add);
-            this.Controls.Add(this.copy);
-            this.Controls.Add(this.listBox1);
+            this.ClientSize = new System.Drawing.Size(737, 433);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.waitPastebtn);
+            this.Controls.Add(this.renamePastebtn);
+            this.Controls.Add(this.soundPastebtn);
             this.Controls.Add(this.ClearBtn);
             this.Controls.Add(this.addDMNbtn);
             this.Controls.Add(this.addKMNbtn);
@@ -356,7 +347,7 @@ namespace ExampleSQLapp2
             this.KeyPreview = true;
             this.Name = "LoginForm";
             this.Text = "dermatology.ru assistant";
-            this.Load += new System.EventHandler(this.LoginForm_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,11 +377,11 @@ namespace ExampleSQLapp2
         private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button copy;
-        private System.Windows.Forms.Button add;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button delete;
-        private System.Windows.Forms.Button save;
+        private System.Windows.Forms.Button soundPastebtn;
+        private System.Windows.Forms.Button renamePastebtn;
+        private System.Windows.Forms.Button waitPastebtn;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
